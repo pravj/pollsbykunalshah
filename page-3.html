@@ -77,6 +77,13 @@ Tweet</a>
   <div class="card-deck mb-3">
     <div class="card mb-4 shadow-sm">
         <div class="card-body" style="text-align: -webkit-center;">
+            <div id="loading">
+                Please wait ... Checking with <a target="_blank" href="https://twitter.com/jack">@jack</a>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                </div>
+            </div>
+
             <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/kunalb11/status/1210508845669388291"></a></blockquote>
             <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/kunalb11/status/1208364724485668865"></a></blockquote>
             <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/kunalb11/status/1207562009027342337"></a></blockquote>
@@ -152,5 +159,16 @@ Tweet</a>
   </footer>
 </div>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script>
+    if(document.readyState === 'ready' || document.readyState === 'complete') {
+        console.log('ready complete');
+    } else {
+        document.onreadystatechange = function () {
+            if (document.readyState == "complete") {
+                document.getElementById('loading').style.display = "none";
+            }
+        }
+    }
+</script>
 </body>
 </html>
